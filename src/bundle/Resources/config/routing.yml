@@ -1,0 +1,20 @@
+csm_list_verses:
+    path: /list-verses
+    defaults:
+        _controller: 'KMadejskiCSMBundle:Verse:showVerses'
+    methods: [GET]
+
+csm_update_verse:
+    path: /update-verse
+    defaults:
+        _controller: 'KMadejskiCSMBundle:Verse:updateVerse'
+    methods: [POST]
+
+csm_load_verse_field_data:
+    path: /load-verse-data/{contentId}/{fieldName}
+    defaults:
+        _controller: 'KMadejskiCSMBundle:Verse:loadVerseFieldData'
+    requirements:
+        contentId: '\d+'
+        fieldName: '\[a-zA-Z]+'
+    methods: [GET]

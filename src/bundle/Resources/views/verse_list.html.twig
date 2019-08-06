@@ -1,0 +1,72 @@
+{% extends '@ezdesign/admin/base.html.twig' %}
+{% block content %}
+{{ encore_entry_link_tags('verses-css', null, 'ezplatform') }}
+{{ encore_entry_script_tags('verses-js', null, 'ezplatform') }}
+<div class="container">
+    <section class="ez-fieldgroup container">
+        {% for verse in verses %}
+            <div class="ez-content-field ez-ground-base">
+                <p class="ez-content-field-name">{{ ez_field_value(verse, 'title') }}</p>
+                <div class="row">
+                    <div class="col">
+                        {{ ez_render_field(verse, 'research') }}
+                    </div>
+                    <div class="col">
+                        <div class="verses-bar ez-content-field-name">
+                            <div class="verses-bar-name">
+                                {{ ez_field_name(verse, 'research') }}
+                            </div>
+                            <div class="verses-buttons">
+                                <button id="edit-verse-research-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit-verse-research-{{ verse.versionInfo.id }}" title="Edit Research">
+                                    <svg class="ez-icon ez-icon--small-medium ez-icon--light">
+                                        <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#edit"></use>
+                                    </svg>
+                                </button>
+                                <button id="display-verse-research-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-secondary">
+                                    <svg class="ez-icon ez-icon--small-medium ez-icon--light">
+                                        <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#view"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="verses-bar ez-content-field-name">
+                            <div class="verses-bar-name">
+                                {{ ez_field_name(verse, 'definition') }}
+                            </div>
+                            <div class="verses-buttons">
+                                <button id="edit-verse-definition-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit-verse-definition-{{ verse.versionInfo.id }}" title="Edit Definition">
+                                    <svg class="ez-icon ez-icon--small-medium ez-icon--light">
+                                        <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#edit"></use>
+                                    </svg>
+                                </button>
+                                <button id="display-verse-definition-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-secondary">
+                                    <svg class="ez-icon ez-icon--small-medium ez-icon--light">
+                                        <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#view"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="verses-bar ez-content-field-name">
+                            <div class="verses-bar-name">
+                                {{ ez_field_name(verse, 'translation') }}
+                            </div>
+                            <div class="verses-buttons">
+                                <button id="edit-verse-translation-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit-verse-translation-{{ verse.versionInfo.id }}" title="Edit translation">
+                                    <svg class="ez-icon ez-icon--small-medium ez-icon--light">
+                                        <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#edit"></use>
+                                    </svg>
+                                </button>
+                                <button id="display-verse-translation-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-secondary">
+                                    <svg class="ez-icon ez-icon--small-medium ez-icon--light">
+                                        <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#view"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+</div>
+{% endblock %}

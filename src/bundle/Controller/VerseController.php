@@ -1,0 +1,123 @@
+<?php
+
+namespace KMadejski\CSMBundle\Controller;
+
+use eZ\Publish\API\Repository\ContentService;
+use eZ\Publish\API\Repository\Exceptions\BadStateException;
+use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException;
+use eZ\Publish\API\Repository\Exceptions\ContentValidationException;
+use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
+use eZ\Publish\API\Repository\Exceptions\NotFoundException;
+use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
+use eZ\Publish\API\Repository\SearchService;
+use eZ\Publish\API\Repository\Values\Content\Content;
+use eZ\Publish\API\Repository\Values\Content\Query;
+use EzSystems\EzPlatformAdminUiBundle\Controller\Controller;
+use KMadejski\CSM\Value\VerseUpdateData;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\SerializerInterface;
+
+final class VerseController extends Controller
+{
+    /**
+     * @var \eZ\Publish\API\Repository\SearchService
+     */
+    private $searchService;
+
+    /**
+     * @var \eZ\Publish\API\Repository\ContentService
+     */
+    private $contentService;
+
+    /**
+     * @var \Symfony\Component\Serializer\SerializerInterface
+     */
+    private $serializer;
+
+    /**
+     * @var string
+     */
+    private $verseContentTypeIdentifier;
+
+
+    public function __construct(
+        SearchService $searchService,
+        ContentService $content,
+        SerializerInterface $serializer,
+        string $verseContentTypeIdentifier
+    ) {
+        $this->searchService = $searchService;
+        $this->verseContentTypeIdentifier = $verseContentTypeIdentifier;
+        $this->contentService = $content;
+        $this->serializer = $serializer;
+    }
+
+    public function showVersesAction(): Response
+    {
+        $result = $this->searchService->findContent($this->buildQuery());
+
+        return $this->render(
+            '@KMadejskiCSM/verse_list.html.twig',
+            [
+                'verses' => array_map(static function ($searchHit) {
+                    return $searchHit->valueObject;
+                }, $result->searchHits),
+            ]
+        );
+    }
+
+    public function updateVerse(Request $request): Response
+    {
+        /** @var VerseUpdateData $verseUpdateData */
+        $verseUpdateData = $this->serializer->deserialize(
+            $request->get('content'),
+            VerseUpdateData::class,
+            'json'
+        );
+
+        try {
+            $content = $this->contentService->loadContent($verseUpdateData->getContentId());
+            $contentInfo = $content->contentInfo;
+            $contentDraft = $this->contentService->createContentDraft($contentInfo);
+
+            $contentUpdateStruct = $this->contentService->newContentUpdateStruct();
+            $contentUpdateStruct->setField($verseUpdateData->getFieldName(), $verseUpdateData->getContent());
+
+            $contentDraft = $this->contentService->updateContent($contentDraft->versionInfo, $contentUpdateStruct);
+            $content = $this->contentService->publishVersion($contentDraft->versionInfo);
+
+            return new Response('', 200);
+        } catch (NotFoundException $e) {
+
+        } catch (UnauthorizedException $e) {
+
+        } catch (BadStateException | ContentFieldValidationException | ContentValidationException | InvalidArgumentException $e) {
+
+        }
+    }
+
+    public function loadVerseFieldData(int $contentId, string $fieldName): Response
+    {
+        try {
+            $content = $this->contentService->loadContent($contentId);
+
+            return new Response(
+                $this->serializer->serialize($content->getFieldValue($fieldName), 'json'),
+                200
+            );
+        } catch (NotFoundException $e) {
+
+        } catch (UnauthorizedException $e) {
+
+        }
+    }
+
+    private function buildQuery(): Query
+    {
+        $query = new Query();
+        $query->query = new Query\Criterion\ContentTypeIdentifier($this->verseContentTypeIdentifier);
+
+        return $query;
+    }
+}

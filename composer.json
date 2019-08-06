@@ -1,0 +1,35 @@
+{
+  "name": "kmadejski/csm-poc",
+  "description": "CSM POC",
+  "license": "GPL-2.0-only",
+  "type": "ezplatform-bundle",
+  "homepage": "https://github.com/kmadejski/csm-poc",
+  "authors": [
+    {
+      "name": "Kamil Madejski",
+      "email": "kamil.madejski@ez.no"
+    }
+  ],
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.1",
+    "ezsystems/ezpublish-kernel": "^7.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2.5",
+    "friendsofphp/php-cs-fixer": "~2.15.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KMadejski\\CSM\\": "src/lib",
+      "KMadejski\\CSMBundle\\": "src/bundle"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KMadejski\\CSM\\Tests\\": "tests/lib",
+      "KMadejski\\CSMBundle\\Tests\\": "tests/bundle"
+    }
+  }
+}
+

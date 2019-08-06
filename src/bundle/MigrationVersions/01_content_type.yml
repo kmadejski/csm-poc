@@ -1,0 +1,70 @@
+-
+    type: content_type
+    mode: create
+    content_type_group: Content
+    identifier: verse
+    name:
+        eng-GB: Verse
+    description: {  }
+    name_pattern: '<title>'
+    url_name_pattern: '<title>'
+    is_container: false
+    lang: eng-GB
+    attributes:
+        -
+            identifier: title
+            type: ezstring
+            name:
+                eng-GB: Title
+            description: {  }
+            required: false
+            searchable: true
+            info-collector: false
+            disable-translation: false
+            category: content
+            position: 1
+            field-settings: {  }
+            validator-configuration:
+                StringLengthValidator: { maxStringLength: null, minStringLength: null }
+        -
+            identifier: research
+            type: ezrichtext
+            name:
+                eng-GB: Research
+            description: {  }
+            required: false
+            searchable: true
+            info-collector: false
+            disable-translation: false
+            category: content
+            position: 2
+            field-settings: {  }
+            validator-configuration: {  }
+        -
+            identifier: definition
+            type: ezrichtext
+            name:
+                eng-GB: Definition
+            description: {  }
+            required: false
+            searchable: true
+            info-collector: false
+            disable-translation: false
+            category: content
+            position: 3
+            field-settings: {  }
+            validator-configuration: {  }
+        -
+            identifier: translation
+            type: ezrichtext
+            name:
+                eng-GB: Translation
+            description: {  }
+            required: false
+            searchable: true
+            info-collector: false
+            disable-translation: false
+            category: content
+            position: 4
+            field-settings: {  }
+            validator-configuration: {  }

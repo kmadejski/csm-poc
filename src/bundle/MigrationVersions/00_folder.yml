@@ -1,0 +1,25 @@
+-
+    type: content
+    mode: create
+    content_type: folder
+    parent_location: 2
+    priority: 0
+    is_hidden: false
+    sort_field: path
+    sort_order: ASC
+    remote_id: 45e5264382486ea7771c9e5ccb5876ee
+    location_remote_id: 9437b0d2ec4cdc5a27dfa2eacbf8f073
+    section: 1
+    object_states: {  }
+    lang: eng-GB
+    owner: 14
+    modification_date: 1563895809
+    publication_date: 1563895809
+    always_available: true
+    attributes:
+        name: Verses
+        short_name: verses
+        short_description:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Verses</para></section>\n"
+        description:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Verses</para></section>\n"
