@@ -1,0 +1,12 @@
+parameters:
+    csm_poc.verse.content_type_identifier: verse
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    KMadejski\CSMBundle\Controller\VerseController:
+        arguments:
+            $verseContentTypeIdentifier: '%csm_poc.verse.content_type_identifier%'
