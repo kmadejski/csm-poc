@@ -1,0 +1,27 @@
+@import './web/bundles/ezplatformadminui/scss/custom';
+@import './web/bundles/ezplatformadminui/scss/functions/calculate.rem';
+@import './web/bundles/ezplatformadminui/scss/mixins';
+
+.verses-bar {
+  border-radius: 0.3125rem;
+  margin-top: 0.35rem;
+}
+
+.verses-buttons {
+}
+
+.ae-toolbars div {
+  z-index: 2000;
+}
+
+.ez-modal--verse-edit .modal-body {
+  padding-left: 60px;
+}
+
+.ez-field-edit--verse-edit {
+    .ez-data-source__input {
+        display: none;
+    }
+
+    @include richtext-field();
+}
