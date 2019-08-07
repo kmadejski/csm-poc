@@ -17,16 +17,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    adsfasf
-
-
-
-
                     <div class="ez-field-edit ez-field-edit--verse-edit">
                         <div class="ez-field-edit__label-wrapper">
-                            <label class="ez-field-edit__label" for="ezrepoforms_content_edit_fieldsData_body_value">Body</label>
+                            <label class="ez-field-edit__label" for="ezrepoforms_content_edit_fieldsData_body_value">Verse</label>
                         </div>
-
                         <div class="ez-field-edit__data">
                             <div class="ez-data-source"> 
                                 {% set udw_context = {
@@ -50,53 +44,6 @@
                             </div>
                         </div>
                     </div>
-
-                    {# <div class="ez-field-edit ez-field-edit--ezrichtext">
-                        <div class="ez-field-edit__label-wrapper">
-                            <label class="ez-field-edit__label" for="ezrepoforms_content_edit_fieldsData_body_value">Body</label>
-                        </div>
-
-                        <div class="ez-field-edit__data">
-                            <div class="ez-data-source">
-                                <textarea id="ezrepoforms_content_edit_fieldsData_body_value" 
-                                    name="ezrepoforms_content_edit[fieldsData][body][value]" 
-                                    class="ez-data-source__input form-control">&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;section xmlns="http://ez.no/namespaces/ezpublish5/xhtml5/edit"/&gt;</textarea>
-                                <div class="hidden" data-udw-config-name="richtext_embed"
-                                    data-udw-config="{&quot;multiple&quot;:false,&quot;activeTab&quot;:&quot;browse&quot;,&quot;visibleTabs&quot;:[],&quot;selectedItemsLimit&quot;:0,&quot;startingLocationId&quot;:1,&quot;searchResultsPerPage&quot;:10,&quot;searchResultsLimit&quot;:50,&quot;allowContainersOnly&quot;:false,&quot;cotfPreselectedLanguage&quot;:null,&quot;cotfAllowedLanguages&quot;:[&quot;eng-GB&quot;],&quot;cotfPreselectedContentType&quot;:null,&quot;cotfAllowedContentTypes&quot;:[],&quot;cotfPreselectedLocation&quot;:null,&quot;cotfAllowedLocations&quot;:[],&quot;allowedContentTypes&quot;:[]}"></div>
-                                <div class="hidden" data-udw-config-name="richtext_embed_image" 
-                                    data-udw-config="{&quot;multiple&quot;:false,&quot;activeTab&quot;:&quot;browse&quot;,&quot;visibleTabs&quot;:[],&quot;selectedItemsLimit&quot;:0,&quot;startingLocationId&quot;:1,&quot;searchResultsPerPage&quot;:10,&quot;searchResultsLimit&quot;:50,&quot;allowContainersOnly&quot;:false,&quot;cotfPreselectedLanguage&quot;:null,&quot;cotfAllowedLanguages&quot;:[&quot;eng-GB&quot;],&quot;cotfPreselectedContentType&quot;:null,&quot;cotfAllowedContentTypes&quot;:[&quot;image&quot;],&quot;cotfPreselectedLocation&quot;:null,&quot;cotfAllowedLocations&quot;:[],&quot;allowedContentTypes&quot;:[]}"></div>
-                                <div class="ez-data-source__richtext cke_editable cke_editable_inline cke_contents_ltr ae-editable" 
-                                    id="ezrepoforms_content_edit_fieldsData_body_value__editable" 
-                                    contenteditable="true" tabindex="0" 
-                                    spellcheck="true" 
-                                    role="textbox" 
-                                    aria-multiline="true" 
-                                    aria-label="Rich Text Editor, ezrepoforms_content_edit_fieldsData_body_value__editable" 
-                                    title="Rich Text Editor, ezrepoforms_content_edit_fieldsData_body_value__editable">
-                                    <p data-ez-node-initialized="true">
-                                        <br>
-                                    </p>
-                                </div>
-                                <div class="ez-richtext-tools">
-                                    <ul class="ez-elements-path"></ul>
-                                    <div class="ez-character-counter">
-                                        <span class="ez-character-counter__word-count">0</span> words
-                                        <span class="ez-character-counter__character-count">0</span> characters
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> #}
-
-
-
-
-
-
-
-
-
-
                 </div>
                 <div class="modal-footer c-popup__footer">
                     <button type="button" class="btn btn-dark ez-btn--cancel" data-dismiss="modal">
@@ -186,6 +133,6 @@
 {% endblock %}
 
 {% block javascripts %}
-{{ encore_entry_script_tags('ezplatform-admin-ui-alloyeditor-js', null, 'ezplatform') }}
+    {{ encore_entry_script_tags('ezplatform-admin-ui-alloyeditor-js', null, 'ezplatform') }}
     {{ encore_entry_script_tags('verses-js', null, 'ezplatform') }}
 {% endblock %}
