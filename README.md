@@ -17,7 +17,7 @@ composer require kmadejski/csm-poc:dev-master
 ```php
     $bundles = [
         ...
-        new KMadejski\CSMBundle\KMadejskiCSMBundle(),
+        new EzSystems\CSMBundle\EzSystemsCSMBundle(),
     ];
 ```
 
@@ -29,7 +29,7 @@ csm_poc.verse.content_type_identifier
 5) Add the following entry to your `app/config/routing.yml` file:
 ```yaml
 csm_poc:
-    resource: "@KMadejskiCSMBundle/Resources/config/routing.yml"
+    resource: "@EzSystemsCSMBundle/Resources/config/routing.yml"
 ```
 
 6) *Optional*: Run the migration to get the test data (requires EzMigrationBundle (https://github.com/kaliop-uk/ezmigrationbundle):
