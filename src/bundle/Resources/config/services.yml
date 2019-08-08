@@ -7,11 +7,11 @@ services:
         autoconfigure: true
         public: false
 
-    KMadejski\CSMBundle\Controller\VerseController:
+    EzSystems\CSMBundle\Controller\VerseController:
         arguments:
             $docbookToXhtml5EditConverter: '@ezrichtext.converter.edit.xhtml5'
             $verseContentTypeIdentifier: '%csm_poc.verse.content_type_identifier%'
 
-    KMadejski\CSMBundle\EventListener\MenuListener:
+    EzSystems\CSMBundle\EventListener\MenuListener:
         tags:
             - { name: kernel.event_subscriber }

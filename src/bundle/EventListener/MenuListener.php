@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace KMadejski\CSMBundle\EventListener;
+namespace EzSystems\CSMBundle\EventListener;
 
 use EzSystems\EzPlatformAdminUi\Menu\Event\ConfigureMenuEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

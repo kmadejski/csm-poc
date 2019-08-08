@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace KMadejski\CSMBundle;
+namespace EzSystems\CSMBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class KMadejskiCSMBundle extends Bundle
+final class EzSystemsCSMBundle extends Bundle
 {
 }

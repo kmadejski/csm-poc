@@ -6,7 +6,7 @@
   "homepage": "https://github.com/kmadejski/csm-poc",
   "authors": [
     {
-      "name": "Kamil Madejski",
+      "name": "eZ Systems | Kamil Madejski",
       "email": "kamil.madejski@ez.no"
     }
   ],
@@ -21,14 +21,8 @@
   },
   "autoload": {
     "psr-4": {
-      "KMadejski\\CSM\\": "src/lib",
-      "KMadejski\\CSMBundle\\": "src/bundle"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "KMadejski\\CSM\\Tests\\": "tests/lib",
-      "KMadejski\\CSMBundle\\Tests\\": "tests/bundle"
+      "EzSystems\\CSM\\": "src/lib",
+      "EzSystems\\CSMBundle\\": "src/bundle"
     }
   }
 }

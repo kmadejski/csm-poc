@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace KMadejski\CSMBundle\Controller;
+namespace EzSystems\CSMBundle\Controller;
 
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\Exceptions\BadStateException;
