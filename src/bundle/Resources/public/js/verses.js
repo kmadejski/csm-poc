@@ -5,8 +5,8 @@
     const SELECTOR_VERSE_EDIT_BTN = '.btn--verse-edit';
     const modal = doc.querySelector(SELECTOR_MODAL);
 
-    const LOAD_VERSE_FIELD_DATA_URL = '/admin1/load-verse-data';
-    const UPDATE_VERSE_FIELD_URL = '/admin1/update-verse';
+    const LOAD_VERSE_FIELD_DATA_URL = '/admin/load-verse-data';
+    const UPDATE_VERSE_FIELD_URL = '/admin/update-verse';
 
     const saveData = (contentId, fieldIdentifier, content, successCallback, errorCallback) => {
         fetch(UPDATE_VERSE_FIELD_URL, {

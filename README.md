@@ -10,7 +10,7 @@
 
 2) Install the bundle:
 ```bash
-composer require kmadejski/csm-poc
+composer require kmadejski/csm-poc:dev-master
 ```
 
 3) Enable the bundle in your `app/AppKernel.php` file:
