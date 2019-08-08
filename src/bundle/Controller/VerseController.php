@@ -19,7 +19,7 @@ use eZ\Publish\API\Repository\SearchService;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use EzSystems\EzPlatformAdminUiBundle\Controller\Controller;
 use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
-use KMadejski\CSM\Value\VerseUpdateData;
+use EzSystems\CSM\Value\VerseUpdateData;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;

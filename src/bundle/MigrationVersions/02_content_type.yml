@@ -37,7 +37,7 @@
             info-collector: false
             disable-translation: false
             category: content
-            position: 1
+            position: 2
             field-settings: {  }
             validator-configuration: {  }
         -
@@ -51,7 +51,7 @@
             info-collector: false
             disable-translation: false
             category: content
-            position: 2
+            position: 3
             field-settings: {  }
             validator-configuration: {  }
         -
@@ -65,7 +65,7 @@
             info-collector: false
             disable-translation: false
             category: content
-            position: 3
+            position: 4
             field-settings: {  }
             validator-configuration: {  }
         -
@@ -79,6 +79,6 @@
             info-collector: false
             disable-translation: false
             category: content
-            position: 4
+            position: 5
             field-settings: {  }
             validator-configuration: {  }

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace KMadejski\CSM\Value;
+namespace EzSystems\CSM\Value;
 
 final class VerseUpdateData
 {

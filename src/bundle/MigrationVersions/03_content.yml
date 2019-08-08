@@ -2,7 +2,7 @@
     type: content
     mode: create
     content_type: verse
-    parent_location: 61
+    parent_location: reference:container_location
     priority: 0
     is_hidden: false
     sort_field: published
@@ -30,7 +30,7 @@
     type: content
     mode: create
     content_type: verse
-    parent_location: 67
+    parent_location: reference:container_location
     priority: 0
     is_hidden: false
     sort_field: published
@@ -58,7 +58,7 @@
     type: content
     mode: create
     content_type: verse
-    parent_location: 61
+    parent_location: reference:container_location
     priority: 0
     is_hidden: false
     sort_field: published
