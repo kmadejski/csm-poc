@@ -27,6 +27,20 @@
             validator-configuration:
                 StringLengthValidator: { maxStringLength: null, minStringLength: null }
         -
+            identifier: content
+            type: ezrichtext
+            name:
+                eng-GB: Content
+            description: {  }
+            required: false
+            searchable: true
+            info-collector: false
+            disable-translation: false
+            category: content
+            position: 1
+            field-settings: {  }
+            validator-configuration: {  }
+        -
             identifier: research
             type: ezrichtext
             name:

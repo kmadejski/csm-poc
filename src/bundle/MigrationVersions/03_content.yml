@@ -1,0 +1,84 @@
+-
+    type: content
+    mode: create
+    content_type: verse
+    parent_location: 61
+    priority: 0
+    is_hidden: false
+    sort_field: published
+    sort_order: DESC
+    remote_id: e11d8e9ffb045e5cae9593a99dbe970d
+    location_remote_id: 1b8bf0a20e00ab44ce94720591b08458
+    section: 1
+    object_states: {  }
+    lang: eng-GB
+    owner: 14
+    modification_date: 1565262196
+    publication_date: 1563968062
+    always_available: true
+    attributes:
+        title: 'Verse 3'
+        content:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Nulla facilisi. Phasellus at erat et lectus rutrum vehicula. Duis faucibus efficitur justo, a pellentesque purus malesuada at. Cras placerat vitae erat nec consequat. Proin nec nunc mauris. Maecenas in aliquam velit, id sodales velit. Aliquam maximus vitae lorem ut blandit. Proin sollicitudin pharetra risus sit amet maximus. Morbi commodo magna in sagittis pulvinar. Duis dapibus volutpat enim, vel interdum turpis ullamcorper sed. Integer non ex a risus bibendum rhoncus et eget elit. Aenean ut lorem urna.</para></section>\n"
+        research:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Maecenas in aliquam velit, id sodales velit. Aliquam maximus vitae lorem ut blandit. Proin sollicitudin pharetra risus sit amet maximus. Morbi commodo magna in sagittis pulvinar. Duis dapibus volutpat enim, vel interdum turpis ullamcorper sed. Integer non ex a risus bibendum rhoncus et eget elit. Aenean ut lorem urna.</para></section>\n"
+        definition:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Duis faucibus efficitur justo, a pellentesque purus malesuada at. Cras placerat vitae erat nec consequat. Proin nec nunc mauris.</para></section>\n"
+        translation:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Aenean euismod, lacus nec tincidunt fringilla, purus tellus feugiat orci, ac varius odio eros eget leo. Curabitur a aliquet mi.\_</para></section>\n"
+-
+    type: content
+    mode: create
+    content_type: verse
+    parent_location: 67
+    priority: 0
+    is_hidden: false
+    sort_field: published
+    sort_order: DESC
+    remote_id: 92b181e4158a4b1c777ab541621059ea
+    location_remote_id: 4f614db60919d8e9019dbe23f4765c9f
+    section: 1
+    object_states: {  }
+    lang: eng-GB
+    owner: 14
+    modification_date: 1565261762
+    publication_date: 1563968075
+    always_available: true
+    attributes:
+        title: 'Verse 1'
+        content:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac semper neque. Praesent ullamcorper a purus id tempus. Aliquam faucibus augue sit amet volutpat pulvinar. Morbi rutrum et justo at placerat. Mauris a ullamcorper felis, at interdum tortor. Phasellus eu felis scelerisque, vulputate neque et, posuere augue. Ut viverra lacinia ex, eget hendrerit sapien eleifend et. Aliquam accumsan neque orci. Donec hendrerit eu lorem id varius. Praesent mollis, neque dignissim maximus accumsan, elit diam luctus nibh, cursus eleifend purus nisl vitae mi.</para></section>\n"
+        research:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus luctus est, a placerat sem laoreet a. Quisque eleifend iaculis nunc. Duis suscipit nisl nibh, in volutpat nunc semper sit amet. Suspendisse a arcu eget tortor feugiat porta at eu dolor.</para></section>\n"
+        definition:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Vivamus vel placerat ex, vitae iaculis metus. Ut vehicula sollicitudin urna. Phasellus ligula velit, scelerisque sodales diam in, fringilla condimentum eros. Aenean eu nunc ac justo elementum viverra. Vestibulum auctor commodo mollis.</para></section>\n"
+        translation:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Aenean euismod, lacus nec tincidunt fringilla, purus tellus feugiat orci, ac varius odio eros eget leo. Curabitur a aliquet mi.\_</para></section>\n"
+-
+    type: content
+    mode: create
+    content_type: verse
+    parent_location: 61
+    priority: 0
+    is_hidden: false
+    sort_field: published
+    sort_order: DESC
+    remote_id: e146b1631d7ac4479d3469af2bb32a23
+    location_remote_id: 2096af0a073840f2b0b3a8822eaff487
+    section: 1
+    object_states: {  }
+    lang: eng-GB
+    owner: 14
+    modification_date: 1565261804
+    publication_date: 1563968184
+    always_available: true
+    attributes:
+        title: 'Verse 2'
+        content:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Nulla velit ante, egestas in dignissim ut, facilisis sed tortor. Aenean et risus ac diam porttitor viverra ut ut massa. Integer vitae molestie nisi. Nam convallis nisl sit amet enim consequat auctor quis non ante. Praesent vulputate cursus ex a dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla pulvinar consectetur orci vitae congue. Phasellus nec eros convallis purus bibendum sollicitudin vel a libero. Nam feugiat dapibus felis eu fermentum. Sed hendrerit, ipsum sit amet fringilla eleifend, justo erat convallis massa, ut dignissim dui quam sed arcu.</para></section>\n"
+        research:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus luctus est, a placerat sem laoreet a. Quisque eleifend iaculis nunc. Duis suscipit nisl nibh, in volutpat nunc semper sit amet. Suspendisse a arcu eget tortor feugiat porta at eu dolor.</para></section>\n"
+        definition:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Vivamus vel placerat ex, vitae iaculis metus. Ut vehicula sollicitudin urna. Phasellus ligula velit, scelerisque sodales diam in, fringilla condimentum eros. Aenean eu nunc ac justo elementum viverra. Vestibulum auctor commodo mollis.</para></section>\n"
+        translation:
+            xml: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<section xmlns=\"http://docbook.org/ns/docbook\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ezxhtml=\"http://ez.no/xmlns/ezpublish/docbook/xhtml\" xmlns:ezcustom=\"http://ez.no/xmlns/ezpublish/docbook/custom\" version=\"5.0-variant ezpublish-1.0\"><para>Aenean euismod, lacus nec tincidunt fringilla, purus tellus feugiat orci, ac varius odio eros eget leo. Curabitur a aliquet mi.\_</para></section>\n"
