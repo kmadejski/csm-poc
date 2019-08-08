@@ -11,10 +11,10 @@ csm_update_verse:
     methods: [POST]
 
 csm_load_verse_field_data:
-    path: /load-verse-data/{contentId}/{fieldName}
+    path: /load-verse-data/{contentId}/{fieldIdentifier}
     defaults:
         _controller: 'KMadejskiCSMBundle:Verse:loadVerseFieldData'
     requirements:
         contentId: '\d+'
-        fieldName: '\[a-zA-Z]+'
+#        fieldIdentifier: '\[a-zA-Z]+'
     methods: [GET]

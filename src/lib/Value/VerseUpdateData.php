@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ */
+declare(strict_types=1);
+
 namespace KMadejski\CSM\Value;
 
 final class VerseUpdateData
@@ -8,7 +14,7 @@ final class VerseUpdateData
     private $contentId;
 
     /** @var string */
-    private $fieldName;
+    private $fieldIdentifier;
 
     /** @var string */
     private $content;
@@ -32,17 +38,17 @@ final class VerseUpdateData
     /**
      * @return string
      */
-    public function getFieldName(): string
+    public function getFieldIdentifier(): string
     {
-        return $this->fieldName;
+        return $this->fieldIdentifier;
     }
 
     /**
-     * @param string $fieldName
+     * @param string $fieldIdentifier
      */
-    public function setFieldName(string $fieldName): void
+    public function setFieldIdentifier(string $fieldIdentifier): void
     {
-        $this->fieldName = $fieldName;
+        $this->fieldIdentifier = $fieldIdentifier;
     }
 
     /**

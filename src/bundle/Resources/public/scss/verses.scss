@@ -2,12 +2,22 @@
 @import './web/bundles/ezplatformadminui/scss/functions/calculate.rem';
 @import './web/bundles/ezplatformadminui/scss/mixins';
 
-.verses-bar {
+.verses-container {
+  margin-top: 15px;
+}
+
+.ez-fieldgroup .ez-content-field .verses-bar {
   border-radius: 0.3125rem;
   margin-top: 0.35rem;
+  overflow: hidden;
+}
+
+.verses-bar-name {
+  float: left;
 }
 
 .verses-buttons {
+  float: right;
 }
 
 .ae-toolbars div {

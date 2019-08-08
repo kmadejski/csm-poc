@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ */
+declare(strict_types=1);
+
 namespace KMadejski\CSMBundle\Controller;
 
 use eZ\Publish\API\Repository\ContentService;
@@ -10,9 +16,9 @@ use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\API\Repository\SearchService;
-use eZ\Publish\API\Repository\Values\Content\Content;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use EzSystems\EzPlatformAdminUiBundle\Controller\Controller;
+use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
 use KMadejski\CSM\Value\VerseUpdateData;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,21 +42,27 @@ final class VerseController extends Controller
     private $serializer;
 
     /**
+     * @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter
+     */
+    private $docbookToXhtml5EditConverter;
+
+    /**
      * @var string
      */
     private $verseContentTypeIdentifier;
-
 
     public function __construct(
         SearchService $searchService,
         ContentService $content,
         SerializerInterface $serializer,
+        Converter $docbookToXhtml5EditConverter,
         string $verseContentTypeIdentifier
     ) {
         $this->searchService = $searchService;
         $this->verseContentTypeIdentifier = $verseContentTypeIdentifier;
         $this->contentService = $content;
         $this->serializer = $serializer;
+        $this->docbookToXhtml5EditConverter = $docbookToXhtml5EditConverter;
     }
 
     public function showVersesAction(): Response
@@ -67,11 +79,11 @@ final class VerseController extends Controller
         );
     }
 
-    public function updateVerse(Request $request): Response
+    public function updateVerseAction(Request $request): Response
     {
         /** @var VerseUpdateData $verseUpdateData */
         $verseUpdateData = $this->serializer->deserialize(
-            $request->get('content'),
+            $request->getContent(),
             VerseUpdateData::class,
             'json'
         );
@@ -82,34 +94,36 @@ final class VerseController extends Controller
             $contentDraft = $this->contentService->createContentDraft($contentInfo);
 
             $contentUpdateStruct = $this->contentService->newContentUpdateStruct();
-            $contentUpdateStruct->setField($verseUpdateData->getFieldName(), $verseUpdateData->getContent());
+            $contentUpdateStruct->setField($verseUpdateData->getFieldIdentifier(), $verseUpdateData->getContent());
 
             $contentDraft = $this->contentService->updateContent($contentDraft->versionInfo, $contentUpdateStruct);
             $content = $this->contentService->publishVersion($contentDraft->versionInfo);
 
             return new Response('', 200);
         } catch (NotFoundException $e) {
-
+            return new Response($e->getMessage(), 404);
         } catch (UnauthorizedException $e) {
-
+            return new Response($e->getMessage(), 401);
         } catch (BadStateException | ContentFieldValidationException | ContentValidationException | InvalidArgumentException $e) {
-
+            // handle exception
         }
     }
 
-    public function loadVerseFieldData(int $contentId, string $fieldName): Response
+    public function loadVerseFieldDataAction(int $contentId, string $fieldIdentifier): Response
     {
         try {
             $content = $this->contentService->loadContent($contentId);
 
             return new Response(
-                $this->serializer->serialize($content->getFieldValue($fieldName), 'json'),
+                $this->serializer->serialize(
+                    ['value' => $this->docbookToXhtml5EditConverter->convert($content->getFieldValue($fieldIdentifier)->xml)->saveXML()],
+                    'json'),
                 200
             );
         } catch (NotFoundException $e) {
-
+            return new Response($e->getMessage(), 404);
         } catch (UnauthorizedException $e) {
-
+            return new Response($e->getMessage(), 500);
         }
     }
 

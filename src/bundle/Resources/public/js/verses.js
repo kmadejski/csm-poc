@@ -4,48 +4,82 @@
     const SELECTOR_MODAL = '#modal-edit-verse';
     const SELECTOR_VERSE_EDIT_BTN = '.btn--verse-edit';
     const modal = doc.querySelector(SELECTOR_MODAL);
-    // TODO: replace ////////////////////////////////
-    const fetchedFromServer = '<section xmlns="http://ez.no/namespaces/ezpublish5/xhtml5/edit"><p>asd</p><p>asdf</p><p> </p></section>';
-    const saveToServer = (newValue, callback) => {
-        console.log(newValue);
 
-        callback();
+    const LOAD_VERSE_FIELD_DATA_URL = '/admin1/load-verse-data';
+    const UPDATE_VERSE_FIELD_URL = '/admin1/update-verse';
+
+    const saveData = (contentId, fieldIdentifier, content, successCallback, errorCallback) => {
+        fetch(UPDATE_VERSE_FIELD_URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                contentId: parseInt(contentId),
+                fieldIdentifier: fieldIdentifier,
+                content: content
+            })
+        })
+            .then((response) => {
+                if (response.ok) {
+                    successCallback();
+                }
+            })
+            .catch((err) => {
+                errorCallback(err);
+            });
+        };
+
+    const fetchData = (contentId, fieldIdentifier) => {
+        return fetch(LOAD_VERSE_FIELD_DATA_URL + '/' + contentId + '/' + fieldIdentifier)
+            .then(function(response) {
+                return response.json();
+            });
     };
-    /////////////////////////////////////////////////
 
     $(SELECTOR_MODAL).modal({ show: false });
 
     doc.querySelectorAll(SELECTOR_VERSE_EDIT_BTN).forEach((verseEditBtn) => {
-        verseEditBtn.addEventListener('click', () => {
-            $(SELECTOR_MODAL).modal({ show: true, backdrop: 'static', focus: false });
+        const richtextContainer = modal.querySelector(`${SELECTOR_FIELD} ${SELECTOR_INPUT}`);
+        const textarea = richtextContainer.closest('.ez-data-source').querySelector('textarea');
 
-            const richtextContainer = modal.querySelector(`${SELECTOR_FIELD} ${SELECTOR_INPUT}`);
-            const textarea = richtextContainer.closest('.ez-data-source').querySelector('textarea');
+        verseEditBtn.addEventListener('click', (event) => {
+            const btn = event.currentTarget;
+            const {contentId, fieldIdentifier} = btn.dataset;
 
-            textarea.value = fetchedFromServer;
+            const dataFetched = fetchData(contentId, fieldIdentifier);
 
-            const richtext = new global.eZ.BaseRichText();
-            const alloyEditor = richtext.init(richtextContainer);
-            const handleSave = () => {
-                saveToServer(textarea.value, (errorMessage) => {
-                    if (errorMessage) {
-                        eZ.helpers.notification.showErrorNotification(errorMessage);
-                        return;
-                    }
+            dataFetched.then((value) => {
+                textarea.value = value.value;
 
-                    $(SELECTOR_MODAL).modal('hide');
+                const richtext = new global.eZ.BaseRichText();
+                const alloyEditor = richtext.init(richtextContainer);
+
+                $(SELECTOR_MODAL).modal({ show: true, backdrop: 'static', focus: false });
+
+                const handleSave = () => {
+                    saveData(contentId, fieldIdentifier, textarea.value,
+                        (successCallback) => {
+                            eZ.helpers.notification.showSuccessNotification('Verse has been updated.');
+
+                            $(SELECTOR_MODAL).modal('hide');
+                        },
+                        (errorMessage) => {
+                            if (errorMessage) {
+                                eZ.helpers.notification.showErrorNotification(errorMessage);
+                                return;
+                            }
+
+                            $(SELECTOR_MODAL).modal('hide');
+                        }
+                    );
+                };
+
+                const confirmBtn = modal.querySelector('.ez-btn--confirm');
+
+                confirmBtn.addEventListener('click', handleSave, false);
+
+                $(SELECTOR_MODAL).one('hidden.bs.modal', () => {
+                    confirmBtn.removeEventListener('click', handleSave);
+                    alloyEditor.destructor();
                 });
-            };
-            const confirmBtn = modal.querySelector('.ez-btn--confirm');
-            const handleConfirmBtnClick = () => {
-                handleSave();
-            };
-
-            confirmBtn.addEventListener('click', handleConfirmBtnClick, false);
-
-            $(SELECTOR_MODAL).one('hidden.bs.modal', () => {
-                confirmBtn.removeEventListener('click', handleConfirmBtnClick);
-                alloyEditor.destructor();
             });
         });
     });

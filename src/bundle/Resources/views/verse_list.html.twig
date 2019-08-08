@@ -6,7 +6,7 @@
         id="modal-edit-verse"
         tabindex="-1"
         role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="verse-edit-dialog modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Update content</h5>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-footer c-popup__footer">
                     <button type="button" class="btn btn-dark ez-btn--cancel" data-dismiss="modal">
-                        Cacel
+                        Cancel
                     </button>
                     <button type="button" class="btn btn-primary font-weight-bold ez-btn--confirm">
                         Save extra content
@@ -56,13 +56,13 @@
             </div>
         </div>
     </div>
-    <section class="ez-fieldgroup container">
+    <section class="verses-container ez-fieldgroup container">
         {% for verse in verses %}
             <div class="ez-content-field ez-ground-base">
                 <p class="ez-content-field-name">{{ ez_field_value(verse, 'title') }}</p>
                 <div class="row">
                     <div class="col">
-                        {{ ez_render_field(verse, 'research') }}
+                        {{ ez_render_field(verse, 'content') }}
                     </div>
                     <div class="col">
                         <div class="verses-bar ez-content-field-name">
@@ -70,13 +70,21 @@
                                 {{ ez_field_name(verse, 'research') }}
                             </div>
                             <div class="verses-buttons">
-                                <button id="edit-verse-research-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-primary btn--verse-edit" 
-                                    title="Edit Research">
+                                <button
+                                    id="edit-verse-research-{{ verse.versionInfo.contentInfo.id }}"
+                                    type="button"
+                                    class="btn btn-sm btn-primary btn--verse-edit"
+                                    title="Edit Research"
+                                    data-content-id="{{ verse.versionInfo.contentInfo.id }}"
+                                    data-field-identifier="research">
                                     <svg class="ez-icon ez-icon--small-medium ez-icon--light">
                                         <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#edit"></use>
                                     </svg>
                                 </button>
-                                <button id="display-verse-research-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-secondary">
+                                <button
+                                    id="display-verse-research-{{ verse.versionInfo.contentInfo.id }}"
+                                    type="button"
+                                    class="btn btn-sm btn-secondary">
                                     <svg class="ez-icon ez-icon--small-medium ez-icon--light">
                                         <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#view"></use>
                                     </svg>
@@ -88,13 +96,21 @@
                                 {{ ez_field_name(verse, 'definition') }}
                             </div>
                             <div class="verses-buttons">
-                                <button id="edit-verse-definition-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-primary btn--verse-edit" 
-                                    title="Edit Definition">
+                                <button
+                                    id="edit-verse-definition-{{ verse.versionInfo.contentInfo.id }}"
+                                    type="button"
+                                    class="btn btn-sm btn-primary btn--verse-edit"
+                                    title="Edit Definition"
+                                    data-content-id="{{ verse.versionInfo.contentInfo.id }}"
+                                    data-field-identifier="definition">
                                     <svg class="ez-icon ez-icon--small-medium ez-icon--light">
                                         <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#edit"></use>
                                     </svg>
                                 </button>
-                                <button id="display-verse-definition-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-secondary">
+                                <button
+                                    id="display-verse-definition-{{ verse.versionInfo.contentInfo.id }}"
+                                    type="button"
+                                    class="btn btn-sm btn-secondary">
                                     <svg class="ez-icon ez-icon--small-medium ez-icon--light">
                                         <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#view"></use>
                                     </svg>
@@ -106,12 +122,21 @@
                                 {{ ez_field_name(verse, 'translation') }}
                             </div>
                             <div class="verses-buttons">
-                                <button id="edit-verse-translation-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit-verse-translation-{{ verse.versionInfo.id }}" title="Edit translation">
+                                <button
+                                    id="edit-verse-translation-{{ verse.versionInfo.contentInfo.id }}"
+                                    type="button"
+                                    class="btn btn-sm btn-primary btn--verse-edit"
+                                    title="Edit translation"
+                                    data-content-id="{{ verse.versionInfo.contentInfo.id }}"
+                                    data-field-identifier="translation">
                                     <svg class="ez-icon ez-icon--small-medium ez-icon--light">
                                         <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#edit"></use>
                                     </svg>
                                 </button>
-                                <button id="display-verse-translation-{{ verse.versionInfo.id }}" type="button" class="btn btn-sm btn-secondary">
+                                <button
+                                    id="display-verse-translation-{{ verse.versionInfo.contentInfo.id }}"
+                                    type="button"
+                                    class="btn btn-sm btn-secondary">
                                     <svg class="ez-icon ez-icon--small-medium ez-icon--light">
                                         <use xlink:href="/bundles/ezplatformadminui/img/ez-icons.svg#view"></use>
                                     </svg>
