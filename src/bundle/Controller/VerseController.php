@@ -70,7 +70,7 @@ final class VerseController extends Controller
         $result = $this->searchService->findContent($this->buildQuery());
 
         return $this->render(
-            '@KMadejskiCSM/verse_list.html.twig',
+            '@EzSystemsCSM/verse_list.html.twig',
             [
                 'verses' => array_map(static function ($searchHit) {
                     return $searchHit->valueObject;
